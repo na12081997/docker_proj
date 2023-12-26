@@ -33,6 +33,7 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.8</version>
                 <configuration>
@@ -42,30 +43,41 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M1</version>
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.14</version>
-                <!-- Move reportPlugins configuration outside of the configuration block -->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.doxia</groupId>
+                        <artifactId>doxia-decoration-model</artifactId>
+                        <version>1.4</version>
+                    </dependency>
+                    <!-- Add other dependencies as needed -->
+                </dependencies>
                 <reportPlugins>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.1.1</version>
                     </plugin>
                     <!-- ... other report plugins ... -->
                 </reportPlugins>
-                <!-- Remove the <configuration> block -->
             </plugin>
         </plugins>
 
         <pluginManagement>
             <plugins>
-                <!-- ... other plugin management configurations ... -->
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.8</version>
                 </plugin>
