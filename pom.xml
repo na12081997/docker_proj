@@ -50,14 +50,13 @@
 
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
-                <configuration>
-                    <reportPlugins>
-                        <plugin>
-                            <artifactId>maven-checkstyle-plugin</artifactId>
-                        </plugin>
-                        <!-- ... other report plugins ... -->
-                    </reportPlugins>
-                </configuration>
+                <version>3.14</version>
+                <reportPlugins>
+                    <plugin>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                    </plugin>
+                    <!-- ... other report plugins ... -->
+                </reportPlugins>
             </plugin>
         </plugins>
 
@@ -76,6 +75,16 @@
     <dependencyManagement>
         <dependencies>
             <!-- ... your dependencies ... -->
+
+            <!-- Example for junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit-dep</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Add similar entries for other dependencies -->
         </dependencies>
     </dependencyManagement>
 
