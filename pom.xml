@@ -51,12 +51,14 @@
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.14</version>
+                <!-- Move reportPlugins configuration outside of the configuration block -->
                 <reportPlugins>
                     <plugin>
                         <artifactId>maven-checkstyle-plugin</artifactId>
                     </plugin>
                     <!-- ... other report plugins ... -->
                 </reportPlugins>
+                <!-- Remove the <configuration> block -->
             </plugin>
         </plugins>
 
