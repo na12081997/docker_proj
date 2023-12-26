@@ -50,28 +50,6 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.14</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.doxia</groupId>
-                        <artifactId>doxia-decoration-model</artifactId>
-                        <version>1.4</version>
-                    </dependency>
-                    <!-- Add other dependencies as needed -->
-                </dependencies>
-                <reportPlugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.1.1</version>
-                    </plugin>
-                    <!-- ... other report plugins ... -->
-                </reportPlugins>
-            </plugin>
         </plugins>
 
         <pluginManagement>
@@ -81,7 +59,6 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.8</version>
                 </plugin>
-                <!-- ... other plugin management configurations ... -->
             </plugins>
         </pluginManagement>
     </build>
@@ -112,4 +89,16 @@
     <prerequisites>
         <maven>3.0.3</maven>
     </prerequisites>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+            <!-- ... other report plugins ... -->
+        </plugins>
+    </reporting>
+
 </project>
